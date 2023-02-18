@@ -1,14 +1,8 @@
 {
-  "name": "Redirector",
-  "description": "Redirect urls",
+  "name": "Bing To Google Redirector",
+  "description": "Redirect bing urls to google after loading",
   "version": "1.0",
-  "manifest_version": 2,
-  "background": {"scripts":["background.js"]},
-  "options_page": "options.html",
-  "permissions": [
-    "<all_urls>",
-    "webRequest",
-    "webRequestBlocking"
-  ],
-  "content_security_policy": "script-src 'self' https://*.googleapis.com https://*.bootstrapcdn.com; object-src 'self'"
+  "manifest_version": 3,
+  "background": { "service_worker": "background.js" },
+  "permissions": ["tabs"]
 }
