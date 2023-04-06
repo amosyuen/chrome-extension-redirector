@@ -3,6 +3,17 @@
   "description": "Redirect bing urls to google after loading",
   "version": "1.0",
   "manifest_version": 3,
-  "background": { "service_worker": "background.js" },
-  "permissions": ["tabs"]
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["*://www.bing.com/search*"],
+      "js": ["content-start.js"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["*://www.bing.com/search*"],
+      "js": ["content-idle.js"],
+      "run_at": "document_idle"
+    }
+  ]
 }
